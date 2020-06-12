@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class AdminController extends Controller
+class AdminUserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,13 +17,25 @@ class AdminController extends Controller
     }
 
     /**
+     * Display all users .
+     *
+     * @return \Illuminate\Http\Response
+     */
+
+    public function user()
+    {
+        return view('admin.users.users');
+    }
+
+
+    /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function create()
     {
-        //
+        return view('admin.users.create');
     }
 
     /**

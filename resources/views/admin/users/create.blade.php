@@ -1,1 +1,2 @@
-admin/create
+@extends('layouts.admin')
+

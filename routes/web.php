@@ -39,10 +39,24 @@ Route::get('/test', 'GeneralController@test')->name('test');
 |
 |
 |--------------------------------------------------------------------------
-| Admin Contoroller routes
+| Admin User Contoroller routes
 |--------------------------------------------------------------------------
 |
 |
 */
 
-Route::resource('admin/user', 'AdminController');
+Route::resource('admin/', 'AdminUserController');
+
+Route::get('admin/user', 'AdminUserController@user')->name('users');
+
+/*
+|
+|
+|--------------------------------------------------------------------------
+| Admin Post Contoroller routes
+|--------------------------------------------------------------------------
+|
+|
+*/
+
+Route::resource('admin/posts','AdminPostController');

@@ -3,7 +3,7 @@
 
 
 @section('title')
-    Admin
+    All Users
 @stop
 
 
