@@ -40,4 +40,8 @@ class User extends Authenticatable
     public function roles(){
         return $this->hasOne(Roles::class, 'id', 'role_id');
     }
+
+    public function photos(){
+        return $this->hasOne('App\Photo', 'id', 'photo_id');
+    }
 }
