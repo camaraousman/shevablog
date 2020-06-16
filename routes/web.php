@@ -29,11 +29,19 @@ Route::get('/home', 'HomeController@index')->name('home');
 |
 */
 
-Route::get('/', 'GeneralController@index')->name('index');
+Route::get('/', 'GeneralController@index')->name('index.home');
 
 Route::get('/shevablog', 'GeneralController@shevablog')->name('shevablog');
 
 Route::get('/test', 'GeneralController@test')->name('test');
+
+//Home routes
+
+Route::get('login', 'GeneralController@login')->name('login');
+Route::get('register', 'GeneralController@register')->name('register');
+Route::get('forgotPassword', 'GeneralController@forgotPassword')->name('forgotPassword');
+Route::get('about', 'GeneralController@about')->name('about');
+Route::get('contact', 'GeneralController@contact')->name('contact');
 
 /*
 |
