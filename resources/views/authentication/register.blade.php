@@ -51,11 +51,14 @@
             Register Account
         </a>
         <hr>
-        <a href="index.html" class="btn btn-google btn-user btn-block">
-            <i class="fab fa-google fa-fw"></i> Register with Google
+        <a href="{{url('login/google')}}" class="btn btn-google btn-user btn-block">
+            <i class="fab fa-google fa-fw"></i> Login with Google
         </a>
-        <a href="#" class="btn btn-facebook btn-user btn-block">
-            <i class="fab fa-facebook-f fa-fw"></i> Register with Facebook
+        <a href="{{url('login/facebook')}}" class="btn btn-facebook btn-user btn-block">
+            <i class="fab fa-facebook-f fa-fw"></i> Login with Facebook
+        </a>
+        <a href="{{url('login/github')}}" class="btn btn-github btn-user btn-block">
+            <i class="fab fa-github fa-fw"></i> Login with Github
         </a>
 
     </form>
