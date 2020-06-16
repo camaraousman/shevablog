@@ -68,3 +68,16 @@ Route::get('admin/user', 'AdminUserController@user')->name('users');
 */
 
 Route::resource('admin/posts','AdminPostController');
+
+/*
+|
+|
+|--------------------------------------------------------------------------
+| Socialite Routes
+|--------------------------------------------------------------------------
+|
+|
+*/
+
+Route::get('/login/{provider}', 'SocialController@redirect');
+Route::get('/login/{provider}/callback', 'SocialController@callback');
