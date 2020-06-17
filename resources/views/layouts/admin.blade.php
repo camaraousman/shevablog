@@ -37,11 +37,11 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
         <!-- Sidebar - Brand -->
-        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{route('index')}}">
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{route('index.home')}}">
             <div class="sidebar-brand-icon rotate-n-15">
                 <i class="fas fa-snowman"></i>
             </div>
-            <div class="sidebar-brand-text mx-3">Admin</div>
+            <div class="sidebar-brand-text mx-3">Home</div>
         </a>
 
         <!-- Divider -->

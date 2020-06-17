@@ -9,8 +9,11 @@ use Str;
 use Hash;
 use Auth;
 
-class SocialController extends Controller
+class SocialiteController extends Controller
 {
+
+    //----------------------------- Socialite -----------------------------------------------
+
     public function redirect($provider)
     {
         return Socialite::driver($provider)->redirect();
@@ -19,16 +22,21 @@ class SocialController extends Controller
     public function callback($provider)
     {
 
-        $getInfo = Socialite::driver($provider)->stateless()->user();
+        try{
+            $getInfo = Socialite::driver($provider)->stateless()->user();
+            $user = $this->createUser($getInfo,$provider);
+            auth()->login($user);
+        }
+        catch(\Exception $e){
+            return redirect()->to('/');
+        }
 
-        $user = $this->createUser($getInfo,$provider);
 
-//        auth()->login($user);
-
-        return redirect()->to('/');
+        return redirect()->to('/admin');
 
     }
     function createUser($getInfo,$provider){
+
 
         $user = User::where('provider_id', $getInfo->id)->first();
 
@@ -42,4 +50,7 @@ class SocialController extends Controller
         }
         return $user;
     }
+
+
+
 }

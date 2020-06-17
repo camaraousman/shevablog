@@ -14,12 +14,7 @@ class GeneralController extends Controller
         return view('welcome');
     }
 
-    public function login(){
-        return view('authentication.login');
-    }
-    public function register(){
-        return view('authentication.register');
-    }
+
     public function forgotPassword(){
         return view('authentication.forgotPassword');
     }

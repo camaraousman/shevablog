@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
+Route::get('/welcome', function () {
+    return view('welcome');
+});
 
 Auth::routes();
 
@@ -37,8 +37,6 @@ Route::get('/test', 'GeneralController@test')->name('test');
 
 //Home routes
 
-Route::get('login', 'GeneralController@login')->name('login');
-Route::get('register', 'GeneralController@register')->name('register');
 Route::get('forgotPassword', 'GeneralController@forgotPassword')->name('forgotPassword');
 Route::get('about', 'GeneralController@about')->name('about');
 Route::get('contact', 'GeneralController@contact')->name('contact');
@@ -73,11 +71,30 @@ Route::resource('admin/posts','AdminPostController');
 |
 |
 |--------------------------------------------------------------------------
-| Socialite Routes
+| Login  Routes
 |--------------------------------------------------------------------------
+|Also handles social logins
 |
 |
 */
 
-Route::get('/login/{provider}', 'SocialController@redirect');
-Route::get('/login/{provider}/callback', 'SocialController@callback');
+Route::get('/login/{provider}', 'SocialiteController@redirect');
+Route::get('/login/{provider}/callback', 'SocialiteController@callback');
+
+
+/*
+|
+|
+|--------------------------------------------------------------------------
+| Login  Routes
+|--------------------------------------------------------------------------
+|Handles tradition login system
+|
+|
+*/
+
+Route::get('/login', 'LoginController@login')->name('login');
+Route::post('/login', 'LoginController@loginPost');
+Route::get('/register', 'LoginController@register')->name('register');
+Route::post('/register', 'LoginController@registerPost');
+
