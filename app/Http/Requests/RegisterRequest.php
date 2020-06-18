@@ -24,10 +24,10 @@ class RegisterRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'=>'required|regex:/^[a-zA-Z]+$/u|max:30|min:2',
+            'name'=>'required|regex:/^[\p{L}\p{P}\p{Zs}]+$/|max:30|min:2',
             'email'=>'required|max:255|unique:users',
-            'password'=>'required|max:50|min:5|required_with:confirmedPassword|same:confirmedPassword',
-            'confirmPassword'=>'required|max:50|min:5',
+            'password'=>'required|max:50|min:5|same:confirmPassword',
+            'confirmPassword'=>'required',
         ];
     }
 }
