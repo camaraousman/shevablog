@@ -5,9 +5,10 @@ namespace App\Http\Controllers;
 use App\User;
 use Illuminate\Http\Request;
 use Laravel\Socialite\Facades\Socialite;
-use Str;
-use Hash;
-use Auth;
+use Illuminate\Support\Facades\Auth;
+//use Str;
+//use Hash;
+//use Auth;
 
 class SocialiteController extends Controller
 {
@@ -32,7 +33,12 @@ class SocialiteController extends Controller
         }
 
 
-        return redirect()->to('/admin');
+        if(Auth::User()->isAdmin()){
+            return redirect()->to('/admin');
+        }
+        else{
+            return redirect()->to('/blogger');
+        }
 
     }
     function createUser($getInfo,$provider){

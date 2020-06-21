@@ -25,11 +25,4 @@ class GeneralController extends Controller
         return view('contact');
     }
 
-
-
-
-
-    public function test(){
-        return view('layouts.authentication');
-    }
 }

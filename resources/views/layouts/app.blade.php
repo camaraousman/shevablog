@@ -21,7 +21,8 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+{{--        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm" >--}}
+        <nav class="navbar navbar-expand-lg navbar-light bg-gradient-dark fixed-top shadow-sm" id="mainNav">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
@@ -72,9 +73,27 @@
             </div>
         </nav>
 
+
+        <header class="masthead-1" style="background-image: url('{{asset('img/computer-cup-desk.jpg')}}')">
+            <div class="overlay-1"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-md-10 mx-auto">
+                        <div class="site-heading">
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </header>
+
+
+
         <main class="py-4">
             @yield('content')
         </main>
+{{--            @include('layouts.footer')--}}
     </div>
 
 </body>

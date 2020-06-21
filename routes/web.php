@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 Route::get('/welcome', function () {
     return view('welcome');
 });
@@ -33,7 +34,6 @@ Route::get('/', 'GeneralController@index')->name('index.home');
 
 Route::get('/shevablog', 'GeneralController@shevablog')->name('shevablog');
 
-Route::get('/test', 'GeneralController@test')->name('test');
 
 //Home routes
 
@@ -51,9 +51,14 @@ Route::get('contact', 'GeneralController@contact')->name('contact');
 |
 */
 
-Route::resource('admin/', 'AdminUserController');
 
-Route::get('admin/user', 'AdminUserController@user')->name('users');
+
+Route::group(['middleware'=>['admin']], function(){
+    Route::resource('admin/', 'AdminUserController');
+    Route::get('admin/user', 'AdminUserController@user')->name('users');
+});
+
+
 
 /*
 |
@@ -67,20 +72,51 @@ Route::get('admin/user', 'AdminUserController@user')->name('users');
 
 Route::resource('admin/posts','AdminPostController');
 
+
+/*
+|
+|
+|--------------------------------------------------------------------------
+| Blogger Contoroller routes
+|--------------------------------------------------------------------------
+|
+|
+*/
+
+
+
+Route::group(['middleware'=>['blogger']], function(){
+
+    Route::get('/blogger', 'BloggerController@index')->name('blogger.index');
+
+    Route::resource('blogger/posts', 'BloggerPostController',
+        [
+            'names'=> ['index'=>'blogger.posts', 'create'=>'blogger.create', 'store'=>'blogger.store',
+                'update'=>'blogger.update', 'destroy'=>'blogger.destroy', 'edit'=>'blogger.edit',
+                'show'=>'blogger.show']
+
+        ]
+    );
+
+});
+
+
+
+
+
 /*
 |
 |
 |--------------------------------------------------------------------------
 | Login  Routes
 |--------------------------------------------------------------------------
-|Also handles social logins
+| handles social logins
 |
 |
 */
 
 Route::get('/login/{provider}', 'SocialiteController@redirect');
 Route::get('/login/{provider}/callback', 'SocialiteController@callback');
-
 
 /*
 |
@@ -92,9 +128,22 @@ Route::get('/login/{provider}/callback', 'SocialiteController@callback');
 |
 |
 */
+Route::get('/logout','Auth\LoginController@logout')->name('logout');
 
-Route::get('/login', 'LoginController@login')->name('login');
-Route::post('/login', 'LoginController@loginPost');
-Route::get('/register', 'LoginController@register')->name('register');
-Route::post('/register', 'LoginController@registerPost');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

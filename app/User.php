@@ -5,9 +5,12 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\DB;
+
 
 class User extends Authenticatable
 {
+
     use Notifiable;
 
     /**
@@ -37,11 +40,19 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    public function photos(){
+        return $this->hasOne('App\Photo', 'id', 'photo_id');
+    }
+
     public function roles(){
         return $this->hasOne(Roles::class, 'id', 'role_id');
     }
 
-    public function photos(){
-        return $this->hasOne('App\Photo', 'id', 'photo_id');
+    public function isAdmin(){
+        if($this->roles->name == "Administrator"){
+            return true;
+        }
+        return false;
     }
+
 }

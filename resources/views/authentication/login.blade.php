@@ -5,7 +5,11 @@
     <div class="container">
         @include('authentication.includes.errors')
 
-        {!! Form::open(['action'=>'LoginController@loginPost', 'method'=>'POST', 'class'=>'user']); !!}
+        @if($errors->any())
+            <h3>{{$errors->first()}}</h3>
+        @endif
+
+        {!! Form::open(['action'=>'LoginController@login', 'method'=>'POST', 'class'=>'user']); !!}
 
 
         <div class="form-group">

@@ -10617,25 +10617,25 @@ form.user .btn-user {
 }
 
 .btn-google {
-  color: #fff;
-  background-color: #ea4335;
-  border-color: #fff;
+  color: #fff !important;
+  background-color: #ea4335 !important;
+  border-color: #fff !important;
 }
 
 .btn-google:hover {
-  color: #fff;
-  background-color: #e12717;
-  border-color: #e6e6e6;
+  color: #fff !important;
+  background-color: #e12717 !important;
+  border-color: #e6e6e6 !important;
 }
 
 .btn-google:focus, .btn-google.focus {
-  box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.5) !important;
 }
 
 .btn-google.disabled, .btn-google:disabled {
-  color: #fff;
-  background-color: #ea4335;
-  border-color: #fff;
+  color: #fff !important;
+  background-color: #ea4335 !important;
+  border-color: #fff !important;
 }
 
 .btn-google:not(:disabled):not(.disabled):active, .btn-google:not(:disabled):not(.disabled).active,
@@ -10651,25 +10651,25 @@ form.user .btn-user {
 }
 
 .btn-facebook {
-  color: #fff;
-  background-color: #3b5998;
-  border-color: #fff;
+  color: #fff !important;
+  background-color: #3b5998 !important;
+  border-color: #fff !important;
 }
 
 .btn-facebook:hover {
-  color: #fff;
-  background-color: #30497c;
-  border-color: #e6e6e6;
+  color: #fff !important;
+  background-color: #30497c !important;
+  border-color: #e6e6e6 !important;
 }
 
 .btn-facebook:focus, .btn-facebook.focus {
-  box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.5) !important;
 }
 
 .btn-facebook.disabled, .btn-facebook:disabled {
-  color: #fff;
-  background-color: #3b5998;
-  border-color: #fff;
+  color: #fff !important;
+  background-color: #3b5998 !important;
+  border-color: #fff !important;
 }
 
 .btn-facebook:not(:disabled):not(.disabled):active, .btn-facebook:not(:disabled):not(.disabled).active,
@@ -10688,15 +10688,15 @@ form.user .btn-user {
 /* custom */
 
 .btn-github {
-    color: #fff;
-    background-color: darkslategrey;
-    border-color: #fff;
+    color: #fff !important;
+    background-color: darkslategrey !important;
+    border-color: #fff !important;
 }
 
 .btn-github:hover {
-    color: #fff;
-    background-color: grey;
-    border-color: #e6e6e6;
+    color: #fff !important;
+    background-color: grey !important;
+    border-color: #e6e6e6 !important;
 }
 
 

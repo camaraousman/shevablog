@@ -37,7 +37,7 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
         <!-- Sidebar - Brand -->
-        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{route('index.home')}}">
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{route('blogger.index')}}">
             <div class="sidebar-brand-icon rotate-n-15">
                 <i class="fas fa-snowman"></i>
             </div>
@@ -49,7 +49,7 @@
 
         <!-- Nav Item - Dashboard -->
         <li class="nav-item active">
-            <a class="nav-link" href="{{route('index')}}">
+            <a class="nav-link" href="{{route('blogger.index')}}">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
                 <span>Dashboard</span></a>
         </li>
@@ -62,20 +62,6 @@
             Menu
         </div>
 
-        <!-- Nav Item - Pages Collapse Menu -->
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                <i class="fas fa-fw fa-user"></i>
-                <span>Users</span>
-            </a>
-            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Users Menu:</h6>
-                    <a class="collapse-item" href="{{route('users')}}">All Users</a>
-                    <a class="collapse-item" href="{{route('create')}}">Create Users</a>
-                </div>
-            </div>
-        </li>
 
         <!-- Nav Item - Utilities Collapse Menu -->
         <li class="nav-item">
@@ -86,8 +72,8 @@
             <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Posts Menu:</h6>
-                    <a class="collapse-item" href="{{route('posts.create')}}">Create Post</a>
-                    <a class="collapse-item" href="{{route('posts.index')}}">All Posts</a>
+                    <a class="collapse-item" href="{{route('blogger.create')}}">Create Post</a>
+                    <a class="collapse-item" href="{{route('blogger.posts')}}">All Posts</a>
                 </div>
             </div>
         </li>
@@ -166,7 +152,7 @@
                         <!-- Dropdown - User Information -->
                         <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                             <a class="dropdown-item" href="{{url('logout')}}">
-{{--                                <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>--}}
+                                {{--                                <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>--}}
                                 <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                 Logout
                             </a>
